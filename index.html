@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pilucho.css</title>
+  <link rel="stylesheet" href="pilucho.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/"><strong>pilucho.css</strong></a>
+      <ul>
+        <li><a href="test.html">Test page</a></li>
+        <li><a href="https://github.com/claudioruiz/pilucho.css">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>pilucho.css</h1>
+    <p>A classless CSS framework. Drop it in, write semantic HTML, get a good-looking page. No classes needed.</p>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;link rel="stylesheet" href="pilucho.css"&gt;</code></pre>
+
+    <p>That's it. Write your HTML and it just works. See the <a href="test.html">test page</a> for every styled element.</p>
+
+    <h2>Theming</h2>
+    <p>Override CSS custom properties:</p>
+    <pre><code>:root {
+  --bg: #fafafa;
+  --text: #333;
+  --accent: #0055ff;
+  --accent-hover: #0033cc;
+  --font-sans: "Inter", sans-serif;
+}</code></pre>
+
+    <h2>Development</h2>
+    <pre><code>npm run dev     # serve locally
+npm run build   # minify</code></pre>
+  </main>
+
+  <footer>
+    <p>MIT &mdash; <a href="https://github.com/claudioruiz/pilucho.css">source</a></p>
+  </footer>
+
+</body>
+</html>

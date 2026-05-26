@@ -1,0 +1,29 @@
+{
+  "name": "pilucho.css",
+  "version": "0.1.0",
+  "description": "A classless CSS framework for semantic HTML",
+  "main": "pilucho.css",
+  "style": "pilucho.css",
+  "files": [
+    "pilucho.css",
+    "pilucho.min.css"
+  ],
+  "scripts": {
+    "minify": "npx lightningcss-cli --minify pilucho.css -o pilucho.min.css",
+    "build": "npm run minify",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "css",
+    "classless",
+    "framework",
+    "semantic",
+    "minimal"
+  ],
+  "author": "Claudio Ruiz <c@claudioruiz.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudioruiz/pilucho.css"
+  }
+}

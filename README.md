@@ -62,6 +62,22 @@ Override CSS custom properties to theme it:
 }
 ```
 
+## Optional JS
+
+For interactive ARIA patterns (accordion, toggle buttons, tabs with keyboard nav), include the optional companion:
+
+```html
+<script src="pilucho.js" defer></script>
+```
+
+It wires up:
+
+- `aria-expanded` → toggles the attribute + flips the `hidden` state of the `aria-controls` target
+- `aria-pressed` → toggles the attribute on click
+- `role="tab"` → click to select, ← → arrow keys to navigate the tablist
+
+~1KB unminified. Zero dependencies. CSS-only patterns (`aria-current`, `aria-busy`, etc.) need no JS.
+
 ## Development
 
 ```bash

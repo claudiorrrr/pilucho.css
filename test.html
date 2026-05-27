@@ -15,6 +15,7 @@
       <ul>
         <li><a href="#text">Text</a></li>
         <li><a href="#embedded">Embedded</a></li>
+        <li><a href="#aria">ARIA</a></li>
         <li><a href="#forms">Forms</a></li>
       </ul>
     </nav>
@@ -414,6 +415,90 @@ greet("world");</code></pre>
     </section>
 
     <!-- ==========================================
+         ARIA & State
+         ========================================== -->
+
+    <section id="aria">
+      <h2>ARIA &amp; state</h2>
+
+      <article id="aria__role-button">
+        <h3>Link as button (<code>role="button"</code>)</h3>
+        <p><a href="#aria" role="button">Anchor styled as button</a> <a href="#aria" role="button" aria-disabled="true">Disabled link-button</a></p>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__current">
+        <h3>Active nav (<code>aria-current</code>)</h3>
+        <nav>
+          <ul>
+            <li><a href="#aria">Home</a></li>
+            <li><a href="#aria" aria-current="page">Blog</a></li>
+            <li><a href="#aria">About</a></li>
+          </ul>
+        </nav>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__busy">
+        <h3>Loading state (<code>aria-busy</code>)</h3>
+        <p><button aria-busy="true">Saving…</button></p>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__invalid">
+        <h3>Invalid input (<code>aria-invalid</code>)</h3>
+        <p>
+          <label for="aria-email">Email</label>
+          <input id="aria-email" type="email" value="not-an-email" aria-invalid="true">
+        </p>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__notices">
+        <h3>Notices (<code>role="alert"</code> / <code>"status"</code> / <code>"note"</code>)</h3>
+        <p role="note">A note — neutral context, drawn from the accent background.</p>
+        <p role="status">A status update — same look, semantic for live regions.</p>
+        <p role="alert">An alert — uses the warning accent on the left border.</p>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__expanded">
+        <h3>Expandable trigger (<code>aria-expanded</code>)</h3>
+        <p><button aria-expanded="false" aria-controls="aria-panel">Toggle details</button></p>
+        <div id="aria-panel" hidden>
+          <p>This is the controlled panel. CSS rotates the caret based on state; <code>pilucho.js</code> handles the click → toggle <code>aria-expanded</code> → flip the panel's <code>hidden</code> attribute.</p>
+        </div>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__pressed">
+        <h3>Toggle button (<code>aria-pressed</code>)</h3>
+        <p><button aria-pressed="false">Bold</button> <button aria-pressed="true">Italic</button> <button aria-pressed="false">Underline</button></p>
+        <p>Pressed buttons invert to an outline style. Use for two-state toggles, not regular clicks.</p>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+
+      <article id="aria__tabs">
+        <h3>Tabs (<code>role="tab"</code> + <code>aria-selected</code>)</h3>
+        <div role="tablist">
+          <button role="tab" id="tab-btn-overview" aria-selected="true" aria-controls="tab-overview">Overview</button>
+          <button role="tab" id="tab-btn-pricing" aria-selected="false" aria-controls="tab-pricing" tabindex="-1">Pricing</button>
+          <button role="tab" id="tab-btn-faq" aria-selected="false" aria-controls="tab-faq" tabindex="-1">FAQ</button>
+        </div>
+        <div id="tab-overview" role="tabpanel" aria-labelledby="tab-btn-overview">
+          <p>Overview content. Selected by default.</p>
+        </div>
+        <div id="tab-pricing" role="tabpanel" aria-labelledby="tab-btn-pricing" hidden>
+          <p>Pricing content. Showing this panel means hiding the others.</p>
+        </div>
+        <div id="tab-faq" role="tabpanel" aria-labelledby="tab-btn-faq" hidden>
+          <p>FAQ content. Click or use ← → keys to switch between tabs.</p>
+        </div>
+        <p><a href="#top">[Top]</a></p>
+      </article>
+    </section>
+
+    <!-- ==========================================
          Form elements
          ========================================== -->
 
@@ -582,6 +667,7 @@ greet("world");</code></pre>
     <p>pilucho.css test page &mdash; based on <a href="https://github.com/cbracco/html5-test-page">html5-test-page</a> by cbracco.</p>
   </footer>
 
+  <script src="pilucho.js" defer></script>
 </body>
 
 </html>
